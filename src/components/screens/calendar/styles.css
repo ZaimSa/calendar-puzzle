@@ -1,11 +1,21 @@
 .calendar {
-  /* display: flex;
+  display: flex;
   height: 100%;
-  background-color: yellowgreen; */
+  flex-direction: row;
 }
 
-.event {
-  background-color: blue;
-  width: '100%';
-  color: white;
+.event-block__item {
+  background-color: #f6f8fa;
+  color: black;
+  width: 100%;
+  position: absolute;
+  border: 1px solid #eef3f7;
+  box-shadow: 2px 2px 4px 0 rgba(195, 195, 195, 0.11);
+}
+
+.event-block{
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
