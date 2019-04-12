@@ -3,6 +3,7 @@ import { eventMock } from '../../../assets/mocks/event';
 import { timeToMinute } from '../../../helpers/time';
 import { createOverlapsedArray } from '../../../helpers/overlapse';
 import './styles.css';
+import moment from 'moment';
 
 /**
  * @class Calendar - Calendar Screen containing events
@@ -21,7 +22,8 @@ class Calendar extends PureComponent {
   }
 
   renderEvents () {
-    const overlapsArray = createOverlapsedArray(eventMock);
+    const eventSortedByTime = eventMock.sort((ev1, ev2) => moment(ev1.start, 'HH:mm').diff(moment(ev2.start, 'HH:mm'))); // TODO: Ask if earlier event must be display in the first column or not ?
+    const overlapsArray = createOverlapsedArray(eventSortedByTime);
 
     return (
       overlapsArray.map((column, i) => (
