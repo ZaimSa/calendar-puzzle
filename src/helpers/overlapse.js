@@ -8,6 +8,7 @@ import moment from 'moment';
  * @returns {bool} - Return if the current event overlapse the current column or not
  */
 export const checkOverlapsed = (overlapsArray, currentEventStart, currentEventEnd) => {
+  if (!overlapsArray) return false;
   let isOverlapsed = false;
   overlapsArray.forEach((overlapsedEvent) => {
     const overlapsedEventStart = moment(overlapsedEvent.start, 'HH:mm');
@@ -32,6 +33,7 @@ export const checkOverlapsed = (overlapsArray, currentEventStart, currentEventEn
  * @returns {Array.<event[]>} - It returns a two dimensional array, the first level represent column, and the second level is an event array
  */
 export const createOverlapsedArray = (events) => {
+  if (!events) return [];
   const overlapsArray = [];
   events.forEach((event) => {
     const currentEventStart = moment(event.start, 'HH:mm');
