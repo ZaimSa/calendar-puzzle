@@ -1,5 +1,4 @@
 import { timeToMinute } from '../../helpers/time';
-import moment from 'moment';
 
 describe('[Helpers][time]', () => {
   test('[timeToMinute] Convert time with undefined value', () => {
